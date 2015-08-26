@@ -1,1 +1,1 @@
-Typesafe Activator template for distributed workers with Akka Cluster.
+Elastically add and remove nodes based on load
