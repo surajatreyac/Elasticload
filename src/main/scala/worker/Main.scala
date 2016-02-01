@@ -50,8 +50,10 @@ object Main {
       withFallback(ConfigFactory.load())
     val system = ActorSystem("ClusterSystem", conf)
 
+    /*
     startupSharedJournal(system, startStore = (port == 2551), path =
       ActorPath.fromString("akka.tcp://ClusterSystem@192.168.2.8:2551/user/store"))
+    */
 
     system.actorOf(ClusterSingletonManager.props(Master.props(workTimeout), "active",
       PoisonPill, Some(role)), "master")
